@@ -2,9 +2,9 @@
     <div class="tocbot-list">
     </div>
     <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
+        <a class="tocbot-toc-expand" onclick="expand_toc()">全部展开</a>
+        <a onclick="go_top()">回到顶部</a>
+        <a onclick="go_bottom()">回到底部</a>
     </div>
 </div>
 
@@ -22,14 +22,14 @@
 
     function extend_click() {
         clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
+        tocbot_timer = setTimeout(function () {
             tocbot.refresh(obj_merge(tocbot_default_config, {
                 hasInnerContainers: true
             }));
         }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
     }
 
-    document.ready(function() {
+    document.ready(function () {
         tocbot.init(obj_merge(tocbot_default_config, {
             collapseDepth: 1
         }));
@@ -42,7 +42,7 @@
         tocbot.refresh(obj_merge(tocbot_default_config, {
             collapseDepth: expanded ? 1 : DEPTH_MAX
         }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+        b.innerText = expanded ? '全部展开' : '全部折叠';
     }
 
     function go_top() {
